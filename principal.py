@@ -22,7 +22,7 @@ st.markdown(
         position: fixed;
         top: 10px;
         right: 10px;
-        opacity: 0.5;
+        opacity: 0.8;
         font-size: 18px;
         font-weight: bold;
         color: gray;

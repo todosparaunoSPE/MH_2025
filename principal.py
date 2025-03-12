@@ -20,12 +20,13 @@ st.markdown(
     <style>
     .watermark {
         position: fixed;
-        top: 10px;  # Cambia 'bottom' por 'top'
-        left: 10px;  # Cambia 'right' por 'left'
+        top: 50px;  # Ajusta este valor para mover la marca de agua más abajo
+        left: 10px;
         opacity: 0.6;
         font-size: 18px;
         font-weight: bold;
         color: gray;
+        z-index: 1000;  # Asegura que la marca de agua esté por encima de otros elementos
     }
     </style>
     <div class="watermark">Javier Horacio Pérez Ricárdez</div>

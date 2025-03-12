@@ -14,14 +14,14 @@ st.title("CAP de las AFORE y Nuevas Ubicaciones de CAP para PENSIONISSSTE")
 st.sidebar.title("Información")
 st.sidebar.write("Nombre: Javier Horacio Pérez Ricárdez")
 
-# Estilo CSS para la marca de agua en la parte superior izquierda
+# Estilo CSS para la marca de agua en la parte inferior izquierda
 st.markdown(
     """
     <style>
     .watermark {
         position: fixed;
-        top: 50px;  # Ajusta este valor para mover la marca de agua más abajo
-        right: 10px;
+        bottom: 10px;  # Coloca la marca de agua en la parte inferior
+        left: 10px;    # Alinea la marca de agua a la izquierda
         opacity: 0.6;
         font-size: 18px;
         font-weight: bold;

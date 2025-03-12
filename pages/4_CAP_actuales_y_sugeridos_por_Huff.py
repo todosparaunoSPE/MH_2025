@@ -93,3 +93,24 @@ enlaces = {
 
 if estado_seleccionado in enlaces:
     st.write(f"Más información sobre {estado_seleccionado}: [Haz clic aquí]({enlaces[estado_seleccionado]})")
+
+
+# Estilo CSS para la marca de agua
+st.markdown(
+    """
+    <style>
+    .watermark {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        opacity: 0.6;
+        font-size: 18px;
+        font-weight: bold;
+        color: gray;
+    }
+    </style>
+    <div class="watermark">Javier Horacio Pérez Ricárdez</div>
+    """,
+    unsafe_allow_html=True
+)
+

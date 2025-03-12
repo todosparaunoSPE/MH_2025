@@ -41,3 +41,23 @@ st.dataframe(df)
 # Crear mapa
 st.write("Mapa de AFORE con nuevas ubicaciones")
 st.write("[CAP actuales de PENSIONISSSTE y CAP sugeridos por el modelo de Huff](https://todosparaunospe.github.io/33_NH/)")
+
+
+# Estilo CSS para la marca de agua
+st.markdown(
+    """
+    <style>
+    .watermark {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        opacity: 0.6;
+        font-size: 18px;
+        font-weight: bold;
+        color: gray;
+    }
+    </style>
+    <div class="watermark">Javier Horacio Pérez Ricárdez</div>
+    """,
+    unsafe_allow_html=True
+)

@@ -75,6 +75,7 @@ enlaces = {
     "Michoacán": "https://todosparaunospe.github.io/16_CH/",
     "Morelos": "https://todosparaunospe.github.io/17_CH/",
     "Nayarit": "https://todosparaunospe.github.io/18_CH/",
+    "Nuevo León": "https://todosparaunospe.github.io/19_CH/",
     "Oaxaca": "https://todosparaunospe.github.io/20_CH/",
     "Puebla": "https://todosparaunospe.github.io/21_CH/",
     "Querétaro": "https://todosparaunospe.github.io/22_CH/",

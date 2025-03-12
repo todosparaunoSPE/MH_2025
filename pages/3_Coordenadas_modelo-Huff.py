@@ -96,3 +96,24 @@ if estado_seleccionado:
         st.dataframe(resultado_df)
     else:
         st.warning("No hay datos suficientes para calcular una nueva ubicación para este estado.")
+
+
+
+# Estilo CSS para la marca de agua
+st.markdown(
+    """
+    <style>
+    .watermark {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        opacity: 0.6;
+        font-size: 18px;
+        font-weight: bold;
+        color: gray;
+    }
+    </style>
+    <div class="watermark">Javier Horacio Pérez Ricárdez</div>
+    """,
+    unsafe_allow_html=True
+)

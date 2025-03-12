@@ -21,7 +21,7 @@ st.markdown(
     .watermark {
         position: fixed;
         top: 10px;
-        right: 10px;
+        left: 10px;
         opacity: 0.8;
         font-size: 18px;
         font-weight: bold;

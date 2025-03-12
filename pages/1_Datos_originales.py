@@ -91,3 +91,24 @@ fig = px.bar(cap_por_afore, x='Nombre (AFORE)', y='Número de CAP',
              labels={'Número de CAP': 'Cantidad de CAP', 'Nombre (AFORE)': 'AFORE'},
              color='Nombre (AFORE)')
 st.plotly_chart(fig)
+
+
+
+# Estilo CSS para la marca de agua
+st.markdown(
+    """
+    <style>
+    .watermark {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        opacity: 0.6;
+        font-size: 18px;
+        font-weight: bold;
+        color: gray;
+    }
+    </style>
+    <div class="watermark">Javier Horacio Pérez Ricárdez</div>
+    """,
+    unsafe_allow_html=True
+)

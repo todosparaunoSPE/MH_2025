@@ -21,7 +21,7 @@ st.markdown(
     .watermark {
         position: fixed;
         top: 50px;  # Ajusta este valor para mover la marca de agua más abajo
-        left: 10px;
+        right: 10px;
         opacity: 0.6;
         font-size: 18px;
         font-weight: bold;

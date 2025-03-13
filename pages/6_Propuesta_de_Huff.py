@@ -1,0 +1,55 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Mar 13 09:13:49 2025
+
+@author: jperezr
+"""
+
+import streamlit as st
+import pandas as pd
+
+# Título principal
+st.title("Propuesta de ubicación de nuevos CAP en las 32 entidades federativas")
+
+# Sección de Ayuda en la barra lateral
+st.sidebar.title("ℹ️ Ayuda")
+st.sidebar.write("""
+Este aplicativo carga automáticamente el archivo **propuesta_de_Huff.csv**  
+y muestra su contenido en una tabla interactiva.  
+
+### ¿Cómo funciona?
+1. **Carga automática del archivo** CSV.
+2. **Muestra los datos completos** en un DataFrame de Streamlit.
+3. **Filtro por Estado:** Puedes seleccionar una entidad para ver solo sus datos.
+4. **Si el archivo no se encuentra**, se muestra un mensaje de error.
+
+📌 **Desarrollado por:** *Javier Horacio Pérez Ricárdez*
+""")
+
+# Cargar automáticamente el archivo CSV
+csv_file = "propuesta_de_Huff.csv"
+
+try:
+    df = pd.read_csv(csv_file)
+    
+    # Verificar si la columna de estados existe
+    estado_column = "Estado"  # Asegúrate de que el nombre de la columna es correcto
+    if estado_column in df.columns:
+        # Lista de estados únicos
+        estados = df[estado_column].unique()
+        estados = sorted(estados)  # Ordenar alfabéticamente
+
+        # Crear filtro en la barra lateral
+        estado_seleccionado = st.sidebar.selectbox("Selecciona un Estado:", ["Todos"] + list(estados))
+
+        # Filtrar datos
+        if estado_seleccionado != "Todos":
+            df = df[df[estado_column] == estado_seleccionado]
+
+    # Mostrar DataFrame filtrado
+    st.dataframe(df)
+
+except FileNotFoundError:
+    st.error(f"❌ El archivo '{csv_file}' no se encontró. Asegúrate de que está en el mismo directorio que este script.")
+except Exception as e:
+    st.error(f"⚠️ Ocurrió un error al cargar el archivo: {e}")

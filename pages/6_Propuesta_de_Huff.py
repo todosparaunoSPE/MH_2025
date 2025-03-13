@@ -54,3 +54,30 @@ except FileNotFoundError:
     st.error(f"❌ El archivo '{csv_file}' no se encontró. Asegúrate de que está en el mismo directorio que este script.")
 except Exception as e:
     st.error(f"⚠️ Ocurrió un error al cargar el archivo: {e}")
+
+
+
+# Estilo CSS para la marca de agua en la parte inferior izquierda
+st.markdown(
+    """
+    <style>
+    .watermark {
+        position: fixed;
+        bottom: 10px;  # Coloca la marca de agua en la parte inferior
+        left: 10px;    # Alinea la marca de agua a la izquierda
+        opacity: 0.6;
+        font-size: 18px;
+        font-weight: bold;
+        color: gray;
+        z-index: 1000;  # Asegura que la marca de agua esté por encima de otros elementos
+        text-align: left;  # Alinea el texto a la izquierda
+        width: auto;  # Evita que el contenedor ocupe todo el ancho
+        white-space: nowrap;  # Evita que el texto se divida en varias líneas
+    }
+    </style>
+    <div class="watermark">Javier Horacio Pérez Ricárdez</div>
+    """,
+    unsafe_allow_html=True
+)
+
+

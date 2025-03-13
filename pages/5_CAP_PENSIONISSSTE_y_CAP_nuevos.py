@@ -40,7 +40,7 @@ st.dataframe(df)
 
 # Crear mapa
 st.write("Mapa de AFORE con nuevas ubicaciones")
-st.write("[CAP actuales de PENSIONISSSTE y CAP sugeridos por el modelo de Huff](https://todosparaunospe.github.io/33_NH/)")
+st.write("[CAP actuales de PENSIONISSSTE y CAP sugeridos por el modelo de Huff](https://todosparaunospe.github.io/33_NH_corregido/)")
 
 
 # Estilo CSS para la marca de agua en la parte inferior izquierda

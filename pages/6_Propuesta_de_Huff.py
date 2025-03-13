@@ -32,6 +32,9 @@ csv_file = "propuesta_de_Huff.csv"
 try:
     df = pd.read_csv(csv_file)
     
+    # Mostrar DataFrame sin filtrar inicialmente
+    st.dataframe(df)
+
     # Verificar si la columna de estados existe
     estado_column = "Estado"  # Asegúrate de que el nombre de la columna es correcto
     if estado_column in df.columns:
@@ -39,15 +42,13 @@ try:
         estados = df[estado_column].unique()
         estados = sorted(estados)  # Ordenar alfabéticamente
 
-        # Crear filtro en la barra lateral
-        estado_seleccionado = st.sidebar.selectbox("Selecciona un Estado:", ["Todos"] + list(estados))
+        # Crear filtro debajo del DataFrame
+        estado_seleccionado = st.selectbox("Selecciona un Estado para filtrar:", ["Todos"] + list(estados))
 
         # Filtrar datos
         if estado_seleccionado != "Todos":
             df = df[df[estado_column] == estado_seleccionado]
-
-    # Mostrar DataFrame filtrado
-    st.dataframe(df)
+            st.dataframe(df)  # Mostrar DataFrame filtrado
 
 except FileNotFoundError:
     st.error(f"❌ El archivo '{csv_file}' no se encontró. Asegúrate de que está en el mismo directorio que este script.")
